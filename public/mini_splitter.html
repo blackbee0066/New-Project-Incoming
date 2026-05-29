@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <title>Mini Splitter</title>
+</head>
+<body>
+    <div class="app">
+
+        <!-- 🔝 Navbar -->
+        <nav class="navbar">
+            <div class="left-nav-item">
+                <h2 class="logo"><a href="mini_splitter.html">Expense Splitter</a></h2>
+            </div>
+
+            <div class="right-nav-item">
+                <div class="user-profile" id="userProfile">
+                    <div class="profile-header">
+                        <!-- <i class='bx bx-user-circle circle-profile'></i> -->
+                        <div class="profile-circle" id="profileInitial"></div>
+                        <span id="usernameDisplay" class="username-display"></span>
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="#">View Account</a></li>
+                        <li><a href="#">Create a Group</a></li>
+                        <li><a href="#">Loans</a></li>
+                        <li><a href="#">SuSu Group</a></li>
+                        <li><a href="#">Investments</a></li>
+                        <li><a href="#">Savings</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="javascript:void(0)" id="logoutBtn">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 🧭 Main Container -->
+        <div class="dashboard">
+
+            <!-- 👥 Left: Add Partner -->
+            <div class="card" id="partnersCard">
+                <h3>Add Partner</h3>
+                <div class="add-partner">
+                    <label>Partner Name:</label>
+                    <input type="text" id="nameInput" placeholder="Enter full name" />
+                    <button id="addPartnerBtn" type="button" style="margin-bottom: 2rem;">Add Partner</button>
+                    <div id="peopleList"></div>
+                </div>
+            </div>
+
+            <!-- 💰 Middle: Add Expense + Summary -->
+            <div class="main-card" id="expensesCard">
+                <div class="card">
+                    <h3>Add Expense</h3>
+                    <div class="addexpenses">
+                        <input type="text" id="expenseTitle" placeholder="Item bought" required />
+                        <input type="number" id="expenseAmount" placeholder="Amount (GHS)" required />
+                        <select class="" id="paidBy" required>
+                            <option value="" disabled selected>Select partner</option>
+                        </select>
+                        <button id="addExpenseBtn" type="button">Add Expense</button>
+                    </div>
+                </div>
+
+                <!-- Hidden multiple Modal card -->
+                <div class="multiple-option-modal hidden" id="multipleOptionModal">
+                    <h4>Enter Each Partner's Contribution</h4>
+
+                    <!-- Close button -->
+                    <button id="closeMultipleModalBtn" class="close-btn">✕</button>
+
+                    <div class="partner-contribution" id="partnerContribution">
+                        <input type="number" placeholder="Amount (GHS)">
+                    </div>
+
+                    
+                </div>
+
+                <div class="card">
+                    <h3 class="card-balance">Balance Summary</h3>
+                    <ul class="summary-list" id="summaryList"></ul>
+                </div>
+
+                <!-- ===== Hidden Edit Form ===== -->
+                <div class="edit-option-modal hidden" id="editOptionModal">
+                    <h6>Edit Expense</h6>
+
+                    <div class="edit-expense-header">
+                        <label>Expense Title</label>
+                        <input type="text" id="editExpenseTitle" placeholder="Enter new title">
+                        <label>Total Amount (GHS)</label>
+                        <input type="number" id="editExpenseTotal" placeholder="Enter total amount">
+                    </div>
+
+                    <div class="edit-data-entry">
+                        <h6>Enter Each Partner's New Contribution</h6>
+                        <div class="edited-partner-contribution" id="editedPartnerContribution"></div>
+                    </div>
+
+                    <div class="edit-btn-actions">
+                        <button id="saveEditBtn" type="button">Save</button>
+                        <button id="cancelEditBtn" type="button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======📜 Right: Group Balances ====-->
+            <div class="card" id="groupBalancesCard">
+                <h3>Group Balances</h3>
+                <div id="groupBalanceList"></div>
+
+                <div class="settle-all-btn-container">
+                    <button id="settleAllBtn" type="button">Settle All</button>
+                    <button id="cancelAllBtn" type="button">Clear All</button>
+                </div>
+               
+            </div>
+               
+        </div>
+        <!-- Tooltip -->
+        <div id="balanceTooltip" class="balance-tooltip hidden">
+
+        </div>
+        
+    </div>
+
+    <script src="./js/auth.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

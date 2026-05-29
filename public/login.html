@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Mini Splitter</title>
+</head>
+<body>
+    <div class="app-home">
+
+        <!-- 🔝 Navbar -->
+        <nav class="home-navbar">
+            <div class="left-nav-item">
+                <h2 class="logo"><a href="Home.html">Expense Splitter</a></h2>
+            </div>
+            
+
+            <div class="right-nav-item">
+                <div class="login-btn">
+                    <a href="login.html" class="btn">Log in</a>
+                </div>
+
+
+                <div class="signup-btn">
+                    <a href="signup.html" class="btn">Sign up</a>
+                </div>
+            </div>
+
+        </nav>
+
+       
+
+        <div class="logs-container">
+
+            <div class="signin-card">
+
+                <h3 class="log-header">Sign In</h3>
+
+                <div class="field">
+                    <label for="">Email</label>
+                    <input type="email" name="email" id="loginEmail" placeholder="example@email.com" />
+                </div>
+
+                <div class="field">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="loginPassword" placeholder="password" />
+                </div>
+
+                <div class="checkbox-row">
+                    <label for="">Remember Me</label>
+                    <input type="checkbox" name="remember-me" id="">
+                </div>
+
+                <div class="button-wrapper">
+                    <button class="signin-btn" type="submit">Sign In</button>
+                </div>
+
+                <div class="password-recovery">
+                    <p><a href="">Forgot your password?</a></p>
+                </div>
+                
+                <!--====Login with Google====-->
+
+                <div class="google-signin-btn">
+                    <a href="">
+                        <img class="google-icon" src="./images/google.png">
+                        Sign in with Google</a>
+                </div>
+                
+            </div>
+
+        </div>    
+    </div>
+    <script src="./js/auth.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
